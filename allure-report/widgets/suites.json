@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"ba23352a26afcb984c2369a758a60e7b","name":"E2E - Searchbar","statistic":{"failed":0,"broken":0,"skipped":0,"passed":8,"unknown":0,"total":8}},{"uid":"943fa347e84523898c11a7a1dd467cf7","name":"E2E - Products","statistic":{"failed":0,"broken":0,"skipped":0,"passed":5,"unknown":0,"total":5}}]}
