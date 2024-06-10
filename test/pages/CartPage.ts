@@ -24,8 +24,28 @@ class CartPage {
         return $("div#headerContainer p.logo >a");
     }
 
+    get clickOnKatalogTab() {
+        return $("p#linkCatalog a span");
+    }
+
+    get selectItems() {
+        return $("li.kategorieGlowne 	a[href*='big-data']");
+    }
+
+
+    async selectItemsFromTheCatalogList() {
+        const selectitem: WebdriverIO.Element = await this.selectItems;
+        await selectitem.waitForDisplayed();
+        await selectitem.click();
+    }
+    async scrollTabCatalog() {
+        const tab: WebdriverIO.Element = await this.clickOnKatalogTab;
+        await tab.waitForDisplayed();
+        await tab.click();
+    }
+
     async backToMainStore() {
-        const back: WebdriverIO.Element = await this.backToMainUrl;        
+        const back: WebdriverIO.Element = await this.backToMainUrl;
         await back.waitForDisplayed();
         await back.scrollIntoView();
         await back.click();
@@ -37,18 +57,18 @@ class CartPage {
         return await alert.getAlertText();
     }
 
-    async acceptDeleteAlert() : Promise<void> {
-    
-        await (browser.acceptAlert());               
+    async acceptDeleteAlert(): Promise<void> {
+
+        await (browser.acceptAlert());
     }
 
-    async scrollPageUp() : Promise<void> {
-    
-        await (browser.scroll());               
+    async scrollPageUp(): Promise<void> {
+
+        await (browser.scroll());
     }
 
 
-    async clickOnSelectedLabel() {       
+    async clickOnSelectedLabel() {
         const label: WebdriverIO.Element = await this.deleteSelectedLabel;
         await label.waitForDisplayed();
         await label.scrollIntoView();

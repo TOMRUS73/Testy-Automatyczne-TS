@@ -5,7 +5,7 @@ export const notFoundUrl: string = "https://helion.pl/search/?qa=&sort=1&szukaj=
 export const searchProductUrl: string = "https://helion.pl/search/?qa=&szukaj=testowanie+oprogramowania";
 export const cartUrl: string = "https://helion.pl/zakupy";
 export const informationUrl: string = "https://helion.pl/przewodnik.phtml";
-
+export const findUrl: string = "https://helion.pl/kategorie/big-data";
 
 
 
