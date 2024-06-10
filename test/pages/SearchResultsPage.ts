@@ -15,6 +15,16 @@ class SearchResultsPage {
         return $("ul.list > li:nth-child(1) > a");
      }
 
+     get helpTab() {
+        return $("nav.site-tools ul li a[href*='helion']");
+     }
+
+     async clickOnPomocTab() {
+        const item: WebdriverIO.Element = await this.helpTab;       
+        await item.waitForDisplayed();
+        await item.click();
+    }
+
      async clickOnFirstBookItem() {
         const item: WebdriverIO.Element = await this.firstBookItem;       
         await item.waitForDisplayed();

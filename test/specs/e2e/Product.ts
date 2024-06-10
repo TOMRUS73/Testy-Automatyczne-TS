@@ -5,7 +5,7 @@ import { searchProductUrl } from "../../config/pagesUrl";
 import SearchResultsPage from "../../pages/SearchResultsPage";
 import ProductPage from "../../pages/ProductPage";
 import CartPage from "../../pages/CartPage";
-import { alertMessage , /*deleteProductMessage*/} from "../../config/data";
+import { alertMessage, /*deleteProductMessage*/ } from "../../config/data";
 
 
 
@@ -56,10 +56,9 @@ describe("E2E - Products", async () => {
         await CartPage.acceptDeleteAlert();
         //await browser.pause(15000);
         //console.log(await CartPage.getDeletedAlertMessageValue);
-        //await browser.pause(10000);
+        await browser.pause(2500);
         //await expect(await CartPage.getDeletedAlertMessageValue).toContain(deleteProductMessage);
 
     })
-
-
+  
 })

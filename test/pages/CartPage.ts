@@ -20,6 +20,17 @@ class CartPage {
         return $("div.infobox > p");
     }
 
+    get backToMainUrl() {
+        return $("div#headerContainer p.logo >a");
+    }
+
+    async backToMainStore() {
+        const back: WebdriverIO.Element = await this.backToMainUrl;        
+        await back.waitForDisplayed();
+        await back.scrollIntoView();
+        await back.click();
+    }
+
     async getDeletedAlertMessageValue(): Promise<string> {
         const alert: WebdriverIO.Element = await this.deletedAlertMessage;
         await alert.waitForDisplayed();
@@ -31,7 +42,13 @@ class CartPage {
         await (browser.acceptAlert());               
     }
 
-    async clickOnSelectedLabel() {
+    async scrollPageUp() : Promise<void> {
+    
+        await (browser.scroll());               
+    }
+
+
+    async clickOnSelectedLabel() {       
         const label: WebdriverIO.Element = await this.deleteSelectedLabel;
         await label.waitForDisplayed();
         await label.scrollIntoView();
