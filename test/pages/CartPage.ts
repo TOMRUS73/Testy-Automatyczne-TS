@@ -36,6 +36,16 @@ class CartPage {
         return $("li.kategorieGlowne a[href*='big-data']");
     }
 
+    get selectOnBookStore() {
+        return $("div.col ul li a[href*='/przewodnik.phtml']");
+    }
+
+    async selectHelpCenterFromBookStore() {
+        const selectnumber: WebdriverIO.Element = await this.selectOnBookStore;
+        await selectnumber.waitForDisplayed();
+        await selectnumber.click();
+    }
+
     async selectPaginationNumber() {
         const selectnumber: WebdriverIO.Element = await this.selectNumber;
         await selectnumber.waitForDisplayed();

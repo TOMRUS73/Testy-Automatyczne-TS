@@ -29,7 +29,12 @@ describe("Helper web site", async () => {
     it("should select pagination number 3", async () => {
         await CartPage.selectPaginationNumber();
         //await browser.pause(1000000);
-        await expect(browser).toHaveUrl(findUrlPagination);        
+        await expect(browser).toHaveUrl(findUrlPagination);
+    })
+
+    it("should select Help Center and back to informationUrl", async () => {
+        await CartPage.selectHelpCenterFromBookStore();
+        await expect(browser).toHaveUrl(informationUrl);
     })
 
 })
