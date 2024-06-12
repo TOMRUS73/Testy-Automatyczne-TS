@@ -6,7 +6,7 @@ export const searchProductUrl: string = "https://helion.pl/search/?qa=&szukaj=te
 export const cartUrl: string = "https://helion.pl/zakupy";
 export const informationUrl: string = "https://helion.pl/przewodnik.phtml";
 export const findUrl: string = "https://helion.pl/kategorie/big-data";
-
+export const findUrlPagination: string = "https://helion.pl/kategorie/big-data/3?display=1&sort=1&rows=120";
 
 
 

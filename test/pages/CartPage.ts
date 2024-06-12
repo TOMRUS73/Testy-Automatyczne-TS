@@ -28,8 +28,18 @@ class CartPage {
         return $("p#linkCatalog a span");
     }
 
+    get selectNumber() {
+        return $("div.stronicowanie a[href*='kategorie/big-data/3']");
+    }
+
     get selectItems() {
-        return $("li.kategorieGlowne 	a[href*='big-data']");
+        return $("li.kategorieGlowne a[href*='big-data']");
+    }
+
+    async selectPaginationNumber() {
+        const selectnumber: WebdriverIO.Element = await this.selectNumber;
+        await selectnumber.waitForDisplayed();
+        await selectnumber.click();
     }
 
 
