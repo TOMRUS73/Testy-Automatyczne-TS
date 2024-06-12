@@ -5,7 +5,7 @@ import { informationUrl } from "../../config/pagesUrl";
 import CartPage from "../../pages/CartPage";
 
 describe("Helper web site", async () => {
-    //let numberPagination: string="";
+    let titleBook: string = "";
     it("should click on tab Pomoc in Main Pages and verify site Help", async () => {
         await GlobalPage.openPage(helionHomeUrl, helionHomeUrl);
         await expect(browser).toHaveUrl(helionHomeUrl);
@@ -36,5 +36,24 @@ describe("Helper web site", async () => {
         await CartPage.selectHelpCenterFromBookStore();
         await expect(browser).toHaveUrl(informationUrl);
     })
+
+    it("should select tab about discount price", async () => {
+        await CartPage.selecttopTitleDiscountPrice();
+    })
+
+    it("should verify title book discount", async () => {
+        //await CartPage.getTitleDiscountBook(); 
+        titleBook = await CartPage.getTitleDiscountBook();
+        console.log(titleBook);
+
+    })
+
+    it("should add to cart and verify title", async () => {
+        await CartPage.addTitleDiscountBookToCart();
+        console.log(await CartPage.getContentFromTheBox());
+        await expect(await CartPage.getContentFromTheBox()).toContain(titleBook)
+    })
+
+
 
 })

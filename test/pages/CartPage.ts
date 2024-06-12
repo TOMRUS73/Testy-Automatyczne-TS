@@ -40,6 +40,49 @@ class CartPage {
         return $("div.col ul li a[href*='/przewodnik.phtml']");
     }
 
+    get topTitle() {
+        return $("div.breadcrumb p a[href='/promocja-tygodnia']");
+    }
+
+    get titleDiscountBook() {
+        return $("div.title-group h1 span");
+    }
+
+    get addTitleDiscountBook() {
+        return $("a#addToBasket_exfob6_ebook");
+    }
+
+    get contentFromTheBox() {
+        return $("div.successbox.oneline p strong");
+    }
+
+    async getContentFromTheBox(): Promise<string> {
+        const titleDiscount: WebdriverIO.Element = await this.contentFromTheBox;
+        await titleDiscount.waitForDisplayed();
+        return await titleDiscount.getText();
+    }
+
+
+    async addTitleDiscountBookToCart() {
+        const selectnumber: WebdriverIO.Element = await this.addTitleDiscountBook;
+        await selectnumber.waitForDisplayed();
+        await selectnumber.click();
+    }
+
+    async getTitleDiscountBook(): Promise<string> {
+        const titleDiscount: WebdriverIO.Element = await this.titleDiscountBook;
+        await titleDiscount.waitForDisplayed();
+        return await titleDiscount.getText();
+    }
+
+
+    async selecttopTitleDiscountPrice() {
+        const selectnumber: WebdriverIO.Element = await this.topTitle;
+        await selectnumber.waitForDisplayed();
+        await selectnumber.click();
+    }
+
+
     async selectHelpCenterFromBookStore() {
         const selectnumber: WebdriverIO.Element = await this.selectOnBookStore;
         await selectnumber.waitForDisplayed();
