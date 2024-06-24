@@ -38,6 +38,11 @@ export const config: Options.Testrunner = {
          //'./test/specs/**/*.ts'
     ],
     suites: {
+        bookmarks:[
+            //'./test/specs/e2e/Searchbar.ts'
+            './test/specs/e2e/MainBookmarks.ts'
+            
+        ],
         helper:[
             //'./test/specs/e2e/Searchbar.ts'
             './test/specs/e2e/Pomoc.ts'
@@ -51,7 +56,8 @@ export const config: Options.Testrunner = {
         e2e:[
             './test/specs/e2e/Searchbar.ts',
             './test/specs/e2e/Product.ts',
-            './test/specs/e2e/Pomoc.ts'
+            './test/specs/e2e/Pomoc.ts',
+            './test/specs/e2e/MainBookmarks.ts'
         ],
     },
     //

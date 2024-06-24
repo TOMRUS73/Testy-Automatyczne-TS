@@ -6,7 +6,9 @@
   "scripts": {
     "e2e": "wdio wdio.conf.ts --suite e2e",
     "debug": "wdio wdio.conf.ts --suite debug",
-    "helper": "wdio wdio.conf.ts --suite helper"
+    "helper": "wdio wdio.conf.ts --suite helper",
+    "bookmarks": "wdio wdio.conf.ts --suite bookmarks"
+
   },
   "keywords": [
     "automation",
